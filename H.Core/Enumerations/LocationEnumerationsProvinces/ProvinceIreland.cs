@@ -1,10 +1,10 @@
 ﻿using H.Core.Properties;
 using H.Infrastructure;
 
-namespace H.Core.Enumerations
+namespace H.Core.Enumerations.LocationEnumerationsProvinces
 {
     public enum ProvinceIreland
-    {       
+    {
         [LocalizedDescription("EnumCarlow", typeof(Resources))]
         Carlow,
         [LocalizedDescription("EnumCavan", typeof(Resources))]

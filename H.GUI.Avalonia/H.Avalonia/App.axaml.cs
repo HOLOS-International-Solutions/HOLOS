@@ -18,8 +18,14 @@ using H.Avalonia.ViewModels.SupportingViews.Disclaimer;
 using H.Avalonia.Views.SupportingViews.Disclaimer;
 using H.Avalonia.ViewModels.SupportingViews.MeasurementProvince;
 using H.Avalonia.Views.SupportingViews.MeasurementProvince;
+using H.Avalonia.Views.SupportingViews.RegionSelection;
+using H.Avalonia.ViewModels.SupportingViews.RegionSelection;
+
 using H.Core.Services;
 using H.Core.Services.Provinces;
+using H.Avalonia.Views.SupportingViews.CountrySelection;
+using H.Avalonia.ViewModels.SupportingViews.CountrySelection;
+using H.Core.Services.RegionCountries;
 
 namespace H.Avalonia
 {
@@ -54,10 +60,12 @@ namespace H.Avalonia
             containerRegistry.RegisterForNavigation<AboutPageView, AboutPageViewModel>();
             containerRegistry.RegisterForNavigation<ClimateResultsView, ClimateResultsViewModel>();
             containerRegistry.RegisterForNavigation<SoilResultsView, SoilResultsViewModel>();
-                
+          
             // New development work
             containerRegistry.RegisterForNavigation<DisclaimerView, DisclaimerViewModel>();
+            containerRegistry.RegisterForNavigation<RegionSelectionView, RegionSelectionViewModel>();
             containerRegistry.RegisterForNavigation<MeasurementProvinceView, MeasurementProvinceViewModel>();
+            containerRegistry.RegisterForNavigation<CountrySelectionView, CountrySelectionViewModel>();
 
             // Blank Page
             containerRegistry.RegisterForNavigation<BlankView, BlankViewModel>();
@@ -73,7 +81,9 @@ namespace H.Avalonia
             containerRegistry.RegisterSingleton<KmlHelpers>();
 
             containerRegistry.RegisterSingleton<ICountrySettings, CountrySettings>();
+            containerRegistry.Register<ICountries, CountriesService>();
             containerRegistry.RegisterSingleton<IProvinces, ProvincesService>();
+           
 
 
             // Dialogs

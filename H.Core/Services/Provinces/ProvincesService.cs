@@ -1,24 +1,22 @@
 ﻿using H.Core.Enumerations;
+using H.Core.Enumerations.LocationEnumerationsProvinces;
+using H.Core.Helpers;
 using H.Core.Services.Provinces;
+
 
 namespace H.Core.Services
 {
     public class ProvincesService : IProvinces
     {
-        private readonly ICountrySettings _countrySettings;
-
-        public ProvincesService(ICountrySettings countrySettings)
-        {
-            _countrySettings = countrySettings;
-        }
-
         public IEnumerable<object> GetProvinces()
         {
-            if (_countrySettings.Version == CountryVersion.Ireland)
+            var countryVersion = ConfigurationFileHelper.GetCountryVersion();
+
+            if (countryVersion == CountryVersion.Ireland)
             {
                 return Enum.GetValues(typeof(ProvinceIreland)).Cast<object>();
             }
-            else if (_countrySettings.Version == CountryVersion.Canada)
+            else if (countryVersion == CountryVersion.Canada)
             {
                 return Enum.GetValues(typeof(ProvinceCanada)).Cast<object>();
             }
