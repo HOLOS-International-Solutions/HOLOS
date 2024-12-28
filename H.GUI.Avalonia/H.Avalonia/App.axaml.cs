@@ -20,6 +20,7 @@ using H.Avalonia.ViewModels.SupportingViews.MeasurementProvince;
 using H.Avalonia.Views.SupportingViews.MeasurementProvince;
 using H.Core.Services;
 using H.Core.Services.Provinces;
+using H.Avalonia.Views.FarmCreationViews;
 
 namespace H.Avalonia
 {
@@ -58,6 +59,9 @@ namespace H.Avalonia
             // New development work
             containerRegistry.RegisterForNavigation<DisclaimerView, DisclaimerViewModel>();
             containerRegistry.RegisterForNavigation<MeasurementProvinceView, MeasurementProvinceViewModel>();
+            containerRegistry.RegisterForNavigation<FarmOptionsView,FarmOptionsViewModel>();
+            containerRegistry.RegisterForNavigation<FarmCreationView, FarmCreationViewModel>();
+            containerRegistry.RegisterForNavigation<FarmOpenExistingView, FarmOpenExistingViewmodel>();
 
             // Blank Page
             containerRegistry.RegisterForNavigation<BlankView, BlankViewModel>();
@@ -96,6 +100,9 @@ namespace H.Avalonia
             regionManager.RegisterViewWithRegion(UiRegions.FooterRegion, typeof(FooterView));
             regionManager.RegisterViewWithRegion(UiRegions.ContentRegion, typeof(DisclaimerView));
             regionManager.RegisterViewWithRegion(UiRegions.ContentRegion, typeof(MeasurementProvinceView));
+            regionManager.RegisterViewWithRegion(UiRegions.ContentRegion, typeof(FarmOptionsView));
+            regionManager.RegisterViewWithRegion(UiRegions.ContentRegion, typeof(FarmCreationView));
+            regionManager.RegisterViewWithRegion(UiRegions.ContentRegion, typeof(FarmOpenExistingView));
 
             var geographicProvider = Container.Resolve<GeographicDataProvider>();
             geographicProvider.Initialize();

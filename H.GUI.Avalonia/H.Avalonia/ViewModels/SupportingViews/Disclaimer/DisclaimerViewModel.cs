@@ -15,6 +15,7 @@ using H.Avalonia.Views;
 using H.Core.Services;
 using Prism.Commands;
 using H.Avalonia.Views.SupportingViews.MeasurementProvince;
+using H.Avalonia.Views.FarmCreationViews;
 
 namespace H.Avalonia.ViewModels.SupportingViews.Disclaimer
 {
@@ -181,7 +182,7 @@ namespace H.Avalonia.ViewModels.SupportingViews.Disclaimer
 
         private void OnOkExecute(object obj)
         {
-            base.RegionManager.RequestNavigate(UiRegions.ContentRegion, nameof(MeasurementProvinceView));         
+            base.RegionManager.RequestNavigate(UiRegions.ContentRegion, nameof(FarmOptionsView));         
         }
 
         private bool OkCanExecute(object arg)
